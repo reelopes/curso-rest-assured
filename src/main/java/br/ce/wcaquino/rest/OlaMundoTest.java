@@ -22,9 +22,9 @@ public class OlaMundoTest {
 	public void testOlaMundo() {
 		Response response = request(Method.GET, "http://restapi.wcaquino.me/ola");
 
-		assertTrue(response.getBody().asString().equals("Ola Mundo!"));
-		assertTrue(response.statusCode() == 200);
-		assertTrue("O status code deveria ser 200", response.statusCode() == 200);
+		assertEquals("Ola Mundo!", response.getBody().asString());
+		assertEquals(200, response.statusCode());
+		assertEquals("O status code deveria ser 200", 200, response.statusCode());
 		assertEquals(200, response.statusCode());
 
 		ValidatableResponse validacao = response.then();

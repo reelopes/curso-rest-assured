@@ -25,15 +25,14 @@ public class UserJsonTest {
 			.body("name", containsString("Silva"))
 			.body("age", greaterThan(18))
 		;
-
 	}
 
 	@Test
 	public void deveVerificarPrimeiroNivelOutrasFormas() {
 		Response response = RestAssured.request(Method.GET, "https://restapi.wcaquino.me/users/1");
 		//path
-		Assert.assertEquals(new Integer(1), response.path("id"));
-		Assert.assertEquals(new Integer(1), response.path("%s", "id"));
+		Assert.assertEquals(Integer.valueOf(1), response.path("id"));
+		Assert.assertEquals(Integer.valueOf(1), response.path("%s", "id"));
 
 		//jsonPath
 		JsonPath jPath = new JsonPath(response.asString());

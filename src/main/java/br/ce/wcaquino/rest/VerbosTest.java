@@ -1,7 +1,5 @@
 package br.ce.wcaquino.rest;
 
-import io.restassured.RestAssured;
-import io.restassured.config.EncoderConfig;
 import io.restassured.http.ContentType;
 import org.junit.Assert;
 import org.junit.Test;
@@ -18,7 +16,7 @@ public class VerbosTest {
 	public void deveSalvarUsuario() {
 		given()
 			.log().all()
-			.contentType("application/json")
+			.contentType(ContentType.JSON)
 			.body("{\"name\":\"Jose\",\"age\":50}")
 		.when()
 			.post("https://restapi.wcaquino.me/users")
@@ -35,7 +33,7 @@ public class VerbosTest {
 	public void naoDeveSalvarUsuarioSemNome() {
 		given()
 			.log().all()
-			.contentType("application/json")
+			.contentType(ContentType.JSON)
 			.body("{\"age\":50}")
 		.when()
 			.post("https://restapi.wcaquino.me/users")
@@ -55,7 +53,7 @@ public class VerbosTest {
 
 		given()
 			.log().all()
-			.contentType("application/json")
+			.contentType(ContentType.JSON)
 			.body(params)
 		.when()
 			.post("https://restapi.wcaquino.me/users")
@@ -74,7 +72,7 @@ public class VerbosTest {
 
 		given()
 			.log().all()
-			.contentType("application/json")
+			.contentType(ContentType.JSON)
 			.body(user)
 		.when()
 			.post("https://restapi.wcaquino.me/users")
@@ -92,7 +90,7 @@ public class VerbosTest {
 
 		User usuarioInserido = given()
 			.log().all()
-			.contentType("application/json")
+			.contentType(ContentType.JSON)
 			.body(user)
 		.when()
 			.post("https://restapi.wcaquino.me/users")
@@ -172,7 +170,7 @@ public class VerbosTest {
 	public void deveAlterarUsuario() {
 		given()
 			.log().all()
-			.contentType("application/json")
+			.contentType(ContentType.JSON)
 			.body("{\"name\":\"Usuario alterado\",\"age\":80}")
 		.when()
 			.put("https://restapi.wcaquino.me/users/1")
@@ -190,7 +188,7 @@ public class VerbosTest {
 	public void deveCustomizarURL() {
 		given()
 			.log().all()
-			.contentType("application/json")
+			.contentType(ContentType.JSON)
 			.body("{\"name\":\"Usuario alterado\",\"age\":80}")
 		.when()
 			.put("https://restapi.wcaquino.me/{entidade}/{userId}", "users", "1")
@@ -208,7 +206,7 @@ public class VerbosTest {
 	public void deveCustomizarURL2() {
 		given()
 			.log().all()
-			.contentType("application/json")
+			.contentType(ContentType.JSON)
 			.body("{\"name\":\"Usuario alterado\",\"age\":80}")
 				.pathParam("entidade", "users")
 				.pathParam("userId", 1)
