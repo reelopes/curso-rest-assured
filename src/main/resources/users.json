@@ -1,0 +1,56 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Generated schema for Root",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "id": {
+        "type": "number"
+      },
+      "name": {
+        "type": "string"
+      },
+      "age": {
+        "type": "number"
+      },
+      "salary": {
+        "type": "number"
+      },
+      "endereco": {
+        "type": "object",
+        "properties": {
+          "rua": {
+            "type": "string"
+          },
+          "numero": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "rua",
+          "numero"
+        ]
+      },
+      "filhos": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "name"
+          ]
+        }
+      }
+    },
+    "required": [
+      "id",
+      "name",
+      "age"
+    ]
+  }
+}
