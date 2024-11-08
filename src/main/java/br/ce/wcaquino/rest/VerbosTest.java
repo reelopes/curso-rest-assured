@@ -4,6 +4,7 @@ import io.restassured.http.ContentType;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.nio.charset.Charset;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -100,7 +101,6 @@ public class VerbosTest {
 			.extract().body().as(User.class)
 		;
 
-//		System.out.print(usuarioInserido);
 		Assert.assertEquals("Usuário deserializado", usuarioInserido.getName());
 		Assert.assertThat(usuarioInserido.getAge(), is((35)));
 		Assert.assertThat(usuarioInserido.getId(), notNullValue());

@@ -60,7 +60,6 @@ public class FileTest {
 				.when()
 				.get("https://restapi.wcaquino.me/download")
 				.then()
-//				.log().all()
 				.statusCode(200)
 				.extract().asByteArray();
 

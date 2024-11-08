@@ -71,21 +71,6 @@ public class UserXMLTest {
 		;
 	}
 
-//	@Test
-//	public void devoTrabalharComXMLEVariaveisEstaticas() {
-//		baseURI = "http://restapi.wcaquino.me";
-//		port = 80;
-//		basePath = "v2";
-//
-//		given()
-//			.log().all()
-//		.when()
-//			.get("/users")
-//		.then()
-//			.statusCode(200)
-//		;
-//	}
-
 	@Test
 	public void devoFazerPesquisasAvancadasComXML() {
 		given()
@@ -113,7 +98,7 @@ public class UserXMLTest {
 			.get("/usersXML")
 		.then()
 //			.statusCode(200)
-			//.extract().path("users.user.name.findAll{it.toString().startsWith('Maria')}");
+//			.extract().path("users.user.name.findAll{it.toString().startsWith('Maria')}");
 			.extract().path("users.user.name.findAll{it.toString().contains('n')}");
 
 		Assert.assertEquals(2, nomes.size());

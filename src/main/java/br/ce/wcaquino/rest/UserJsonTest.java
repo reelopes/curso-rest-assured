@@ -30,6 +30,7 @@ public class UserJsonTest {
 	@Test
 	public void deveVerificarPrimeiroNivelOutrasFormas() {
 		Response response = RestAssured.request(Method.GET, "https://restapi.wcaquino.me/users/1");
+
 		//path
 		Assert.assertEquals(Integer.valueOf(1), response.path("id"));
 		Assert.assertEquals(Integer.valueOf(1), response.path("%s", "id"));

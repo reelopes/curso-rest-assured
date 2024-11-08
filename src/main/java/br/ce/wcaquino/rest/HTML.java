@@ -36,8 +36,8 @@ public class HTML {
 			.log().all()
 			.statusCode(200)
 			.contentType(ContentType.HTML)
-				.body(hasXPath("count(//table/tr)", is("4")))
-				.body(hasXPath("//td[text()='2']/../td[2]", is("Maria Joaquina")))
+			.body(hasXPath("count(//table/tr)", is("4")))
+			.body(hasXPath("//td[text()='2']/../td[2]", is("Maria Joaquina")))
 		;
 	}
 

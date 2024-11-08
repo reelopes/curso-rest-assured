@@ -48,7 +48,7 @@ public class OlaMundoTest {
 	}
 
 	@Test
-	public void devoConhecerMatchesHamcrest(){
+	public void devoConhecerMatchersHamcrest(){
 		assertThat("Maria", is("Maria"));
 		assertThat(128, is(128));
 		assertThat(128, isA(Integer.class));

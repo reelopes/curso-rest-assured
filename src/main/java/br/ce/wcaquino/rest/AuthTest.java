@@ -11,6 +11,8 @@ import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.*;
 
 public class AuthTest {
+
+	// Sem autenticação
 	@Test
 	public void deveAcessarSWAPI(){
 		given()
@@ -24,6 +26,7 @@ public class AuthTest {
 		;
 	}
 
+	// Autenticação com API Key
 	@Test
 	public void deveObterClima(){
 		given()
@@ -55,6 +58,7 @@ public class AuthTest {
 		;
 	}
 
+	// Autenticação do tipo Basic
 	@Test
 	public void deveFazerAutenticacaoBasica(){
 		given()
@@ -68,6 +72,7 @@ public class AuthTest {
 		;
 	}
 
+	// Autenticação do tipo Basic alternativa
 	@Test
 	public void deveFazerAutenticacaoBasica2(){
 		given()
@@ -82,6 +87,7 @@ public class AuthTest {
 		;
 	}
 
+	// Autenticação do tipo Basic com Challenge
 	@Test
 	public void deveFazerAutenticacaoBasicaChallenge(){
 		given()
@@ -96,6 +102,7 @@ public class AuthTest {
 		;
 	}
 
+	// Autenticação com JWT
 	@Test
 	public void deveFazerAutenticacaoComToken(){
 		Map<String, String> login = new HashMap<String,String>();
@@ -129,6 +136,7 @@ public class AuthTest {
 		;
 	}
 
+	// Autenticação com Cookies
 	@Test
 	public void deveAcessarAplicacaoWeb(){
 		//login
